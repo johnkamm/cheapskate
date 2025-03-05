@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEAPSKATE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            /* No height limit to allow scrolling */
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            /* Minimum height to ensure scrolling is possible */
+            min-height: 150vh;
+            padding-bottom: 50vh;
+        }
+        
+        .image1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            /* No max-width to allow full size */
+        }
+        
+        /* Text container for the typography images */
+        .text-container {
+            position: absolute;
+            top: 75vh;
+            left: 20%;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 4; /* Just above image2's z-index */
+        }
+
+        .text-container2 {
+            position: absolute;
+            top: 75vh;
+            left: 20%;
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 4; /* Just above image2's z-index */
+        }
+        
+        .image2 {
+            position: relative; /* Changed to relative inside container */
+            width: 100%;
+            z-index: 3;
+            /* No max-width to allow full size */
+        }
+        
+        .image3 {
+            position: absolute;
+            top: 115vh;
+            left: 40%;
+            width: 60%;
+            /* No max-width to allow full size */
+        }
+        
+        .image4 {
+            position: absolute;
+            top: 140vh;
+            left: 40%;
+            width: 60%;
+            /* No max-width to allow full size */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Original image1 remains unchanged and outside container -->
+        <div class="image1">
+            <img src="/images/image1.png" alt="">
+        </div>
+        
+        <!-- Container only around image2 (typography) -->
+        <div class="text-container">
+            <div class="image2">
+                <img src="/images/1_Typeography-nf.png" alt="">
+            </div>
+        </div>
+
+        <div class="text-container2"></div>        
+        <div class="image3">
+            <img src="/images/2-nf.png" alt="">
+        </div>
+
+        <!-- The other images remain unchanged -->
+        <div class="image4">
+            <img src="/images/field4.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEAPSKATE - Scroll Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            /* Create space for scrolling */
+            height: 2000px;
+        }
+        
+        /* Top-left image with overlay */
+        .image-top-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100vh;
+            z-index: 1;
+        }
+        
+        .image-top-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            font-weight: bold;
+            color: red;
+            text-transform: uppercase;
+            font-family: 'Impact', sans-serif;
+            -webkit-text-stroke: 2px black;
+            letter-spacing: 2px;
+            z-index: 2;
+        }
+        
+        /* Middle text section */
+        .middle-section {
+            position: absolute;
+            top: 100vh;
+            left: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #444;
+            padding: 40px;
+            z-index: 3;
+        }
+        
+        .middle-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        /* Bottom-right image */
+        .image-bottom-right {
+            position: absolute;
+            top: 200vh;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 4;
+        }
+        
+        .image-bottom-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Typography styles */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
+            .middle-section {
+                padding: 60px;
+            }
+            
+            .image-bottom-right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top-left image with CHEAPSKATE overlay -->
+    <div class="image-top-left">
+        <img src="/images/image1.png" alt="Farmer on tractor">
+        <div class="overlay-text">CHEAPSKATE</div>
+    </div>
+    
+    <!-- Middle text section -->
+    <div class="middle-section">
+        <div class="middle-text">
+            <h1>Pinch every penny. Streamline. Innovate.</h1>
+            <p>That's the way of farming, and has always been.</p>
+            <p>Farmers that get it right rise to the top—they build scale, they mechanize. <span class="italic">They win.</span></p>
+            <p>Still, every day is a struggle with pests and weather and fickle markets.</p>
+            
+            <p class="highlight">Some don't make it.</p>
+            
+            <p>And some make it look easy.</p>
+            
+            <h1>Is farming cannabis at all the same? You bet it is.</h1>
+            <p>Like any other harvest, a winning cannabis crop is measured by</p>
+            <p>1) a quality and abundant yield and</p>
+            <p>2) shrinking costs year over year</p>
+        </div>
+    </div>
+    
+    <!-- Bottom-right image -->
+    <div class="image-bottom-right">
+        <img src="/images/image3.png" alt="Field of crops">
+    </div>
+    
+    <script>
+        // Simple scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            // Gradually fade out the top image as you scroll
+            const topImage = document.querySelector('.image-top-left');
+            if (scrollPosition < windowHeight) {
+                const opacity = 1 - (scrollPosition / windowHeight);
+                topImage.style.opacity = opacity;
+            }
+            
+            // Reveal the bottom image when scrolled far enough
+            const bottomImage = document.querySelector('.image-bottom-right');
+            if (scrollPosition > windowHeight * 1.5) {
+                bottomImage.style.opacity = (scrollPosition - (windowHeight * 1.5)) / (windowHeight / 2);
+            } else {
+                bottomImage.style.opacity = 0;
+            }
+        });
+    </script>
+</body>
+</html>
