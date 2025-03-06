@@ -1,6 +1,8 @@
-baseURL = "/"
+baseURL = "https://johnkamm.github.io/cheapskate/"
 languageCode = "en-us"
 title = "Cheapskate"
 
+# Add this to make URLs work correctly on GitHub Pages
+canonifyURLs = true
 
 disableKinds = ["taxonomy", "term"]
