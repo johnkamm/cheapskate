@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="container-fluid">
+    <div class="image1">
+        <img src="{{ "images/image1.png" | relURL }}" alt="">
+    </div>
+    
+    <!-- Container for both text images -->
+    <div class="text-container">
+        <div class="image2">
+            <img src="{{ "images/1_Typeography-nf.png" | relURL }}" alt="">
+        </div>
+        
+        <div class="image3">
+            <img src="{{ "images/2-nf.png" | relURL }}" alt="">
+        </div>
+    </div>
+
+    <!-- Video container -->
+    <div class="video-container">
+        <video controls autoplay muted loop class="img-fluid">
+            <source src="{{ "images/dronevid1.mp4" | relURL }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+{{ end }}
