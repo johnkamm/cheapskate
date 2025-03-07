@@ -17,6 +17,7 @@ body {
     top: 0;
     left: 0;
     width: 60%;
+    padding: 50px;
 }
 
 .text-container {
@@ -43,6 +44,7 @@ body {
     top: 120vh;
     left: 40%;
     width: 60%;
+    padding: 50px;
 }
 
 img {
@@ -109,6 +111,7 @@ img {
     top: 120vh;
     left: 40%;
     width: 60%;
+    padding: 50px;
     z-index: 2;
 }
 
