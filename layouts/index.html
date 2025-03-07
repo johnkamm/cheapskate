@@ -1,25 +1,32 @@
 {{ define "main" }}
-<div class="container-fluid p-0">
-    <div class="row g-0">
-        <div class="col-12">
-            <div class="image1">
-                <img src="{{ "images/image1.png" | relURL }}" alt="Main image" class="img-fluid">
-            </div>
-            
-            <div class="text-container">
-                <div class="image2">
-                    <img src="{{ "images/1_Typeography-nf.png" | relURL }}" alt="Typography" class="img-fluid">
-                </div>
-                
-                <div class="image3">
-                    <img src="{{ "images/2-nf.png" | relURL }}" alt="Content" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="image4">
-                <img src="{{ "images/field4.jpg" | relURL }}" alt="Field" class="img-fluid">
-            </div>
+<!-- Simplest layout possible -->
+<div class="page-container">
+    <!-- Row 1: Tractor and text side by side -->
+    <div class="row-container">
+        <div class="left-column">
+            <img src="{{ "images/image1.png" | relURL }}" alt="Tractor image">
         </div>
+        <div class="right-column">
+            <img src="{{ "images/1_Typeography-nf.png" | relURL }}" alt="Typography">
+        </div>
+    </div>
+    
+    <!-- Row 2: Content and field image side by side -->
+    <div class="row-container">
+        <div class="left-column">
+            <img src="{{ "images/2-nf.png" | relURL }}" alt="Content">
+        </div>
+        <div class="right-column">
+            <img src="{{ "images/field4.jpg" | relURL }}" alt="Field">
+        </div>
+    </div>
+    
+    <!-- Video container -->
+    <div class="video-row">
+        <video controls autoplay muted loop>
+            <source src="{{ "images/dronevid1.mp4" | relURL }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
 {{ end }}
